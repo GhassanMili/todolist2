@@ -28,13 +28,21 @@
     justify-content: space-between;  
     min-width: 250px;
     gap: 10px;
+    /* ekher haja badelt'ha  */
+    flex-wrap: nowrap;
+     
     
 }
 .bar label{
     color: black;
     margin-left: 30px;
     border: none;
-    border-bottom: 2px solid rgb(0, 86, 157);
+    border-bottom: 2px solid rgb(175, 199, 227);
+    flex: 1;
+    text-align: left; /* ekher haja badeltha   */
+    margin-right: 10px; /* ekher haja badeltha   */
+    display: inline-block; /* kifkif*/
+    width: fit-content; /* kifkif */
 }
 #txt{
   padding: 10px 20px;
@@ -80,6 +88,10 @@
     color: white;
     font-weight: bold;
     cursor: pointer;
+    /* ekher haja badeltha  */
+    min-width: 80px; 
+    text-align: center;
+
 }
 .edit-btn,.delete-btn:hover{
     opacity: 0.8;
