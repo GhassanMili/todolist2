@@ -1,109 +1,104 @@
-#card{
-    
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#card {
     color: #fff;
-    margin: 100px  auto 0;
     border-radius: 20px;
     padding: 20px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 50vw;
+    background-color: rgb(227, 229, 237);
     display: grid;
     gap: 20px;
-    background-color: rgb(227, 229, 237);
-    
-}
-#tasks{
-    display: block;
-    
-
-}
-.bar {
-    
-    max-width: 90%; 
-    padding: 10px;
-    width: 100%; 
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  
-    min-width: 250px;
-    gap: 10px;
-    /* ekher haja badelt'ha  */
-    flex-wrap: nowrap;
-     
-    
-}
-.bar label{
-    color: black;
-    margin-left: 30px;
-    border: none;
-    border-bottom: 2px solid rgb(175, 199, 227);
-    flex: 1;
-    text-align: left; /* ekher haja badeltha   */
-    margin-right: 10px; /* ekher haja badeltha   */
-    display: inline-block; /* kifkif*/
-    width: fit-content; /* kifkif */
-}
-#txt{
-  padding: 10px 20px;
-  border: none;
-  border-bottom: 2px solid rgb(0, 86, 157);
-  
-}
-#txt:hover{
-     background-color: rgb(239, 243, 242);
-}
-#my-btn{
-    padding: 10px;
-    border: none;
-    background-image: linear-gradient( 45deg , rgb(0, 0, 168) , rgb(59, 59, 167) );
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-}
-#my-btn:hover:active{
-    background-image: linear-gradient( 45deg , rgb(0, 0, 168) , rgb(52, 52, 236) );
 }
 
 .container-test {
-   display: grid;
-   grid-template-columns: 1fr 100px;
-   gap: 5px;
-
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
 }
 
-#my-btn:hover{
-    opacity: 0.8;
+#txt {
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 2px solid rgb(0, 86, 157);
+    outline: none;
+    border-radius: 6px;
 }
 
+#txt:hover {
+    background-color: rgb(239, 243, 242);
+}
 
-.edit-btn,.delete-btn{
+#my-btn {
     padding: 10px;
     border: none;
-    background-image: linear-gradient( 45deg , rgb(0, 0, 168) , rgb(59, 59, 167) );
+    background-image: linear-gradient(45deg, rgb(0, 0, 168), rgb(59, 59, 167));
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    /* ekher haja badeltha  */
-    min-width: 80px; 
-    text-align: center;
-
 }
-.edit-btn,.delete-btn:hover{
+
+#my-btn:hover {
     opacity: 0.8;
 }
 
-.edit-btn,.delete-btn:hover:active{
-    background-image: linear-gradient( 45deg , rgb(0, 0, 168) , rgb(52, 52, 236) );
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
+.bar {
+    background-color: rgba(255, 255, 255, 0.284);
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
-#task-1,#task-2,#task-3,#task-4{
+.bar:hover{
+    background-color: rgba(255, 255, 255, 0.544);
+}
+
+.bar label {
     color: black;
+    flex: 1;
+    text-align: left;
+    overflow-wrap: break-word;
 }
-body{
-    background-color: black;
+
+.edit-btn,
+.delete-btn {
+    padding: 5px 10px;
+    border: none;
+    background-image: linear-gradient(45deg, rgb(0, 0, 168), rgb(59, 59, 167));
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 70px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.8;
+}
+
+.edit-btn:active,
+.delete-btn:active {
+    background-image: linear-gradient(45deg, rgb(0, 0, 168), rgb(52, 52, 236));
 }

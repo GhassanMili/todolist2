@@ -1,3 +1,82 @@
+var todoList = [ "Task-1" , "Task-2 " , "Task-3"]
+
+
+
+function displayTodo(){
+    document.getElementById("tasks").innerHTML = ""
+for(var i = 0 ; i < todoList.length ; i++){
+    document.getElementById("tasks").innerHTML += `
+       <div class="bar" id="task1">
+                <label>${todoList[i]}</label> <button class="edit-btn"  onclick="updateTodo(${i})">Edit</button>
+                 <button class="delete-btn" onclick="deleteTodo(${i})">Delete</button><br>
+            </div>
+`
+}
+
+}
+
+
+
+function addTodo(){
+    if(document.getElementById("txt").value.trim() === ""){
+        alert("You can't add empty text")
+        return
+    }
+    todoList.push(document.getElementById("txt").value)
+    displayTodo()
+    document.getElementById("txt").value = ""
+}
+
+
+function deleteTodo(index){
+    todoList.splice(index , 1 )
+    displayTodo()
+}
+
+
+function updateTodo(index ){
+    if(document.getElementById("txt").value.trim() === ""){
+        alert("You can't submit empty text")
+        return
+    }
+    todoList.splice(index , 1 , document.getElementById("txt").value)
+    displayTodo()
+    document.getElementById("txt").value = ""
+
+}
+
+document.getElementById("my-btn").addEventListener("click" , ()=> {
+    addTodo()
+})
+
+displayTodo()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let txt = document.getElementById('txt');
 let task1 = document.getElementById('task1');
 let task2 = document.getElementById('task2');
@@ -12,7 +91,12 @@ let del4 = document.getElementById('del4');
 
 
 document.getElementById('my-btn').addEventListener("click", function () {
-    if (task1.innerHTML.indexOf('Task-1') != - 1 && txt.value!='')  {
+
+    if (txt.value==''){ 
+        window.alert('You cant submit empty task');
+    }
+
+    else if (task1.innerHTML.indexOf('Task-1') != - 1 && txt.value!='')  {
         task1.innerHTML = txt.value;
         txt.value='';
         txt.placeholder = 'Enter a task'
@@ -118,6 +202,7 @@ edit4.addEventListener('click',function(){
          txt.placeholder = 'Enter a task';
          txt.value='';
     }
+    
   
 }); 
 
@@ -126,3 +211,4 @@ edit4.addEventListener('click',function(){
 
 
 
+*/
