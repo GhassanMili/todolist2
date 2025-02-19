@@ -1,3 +1,54 @@
+var todoList = ["Task-1", "Task-2", "Task-3"];
+
+function displayTodo() {
+    $("#tasks").empty();
+    $.each(todoList, function (i, task) {
+        $("#tasks").append(`
+            <div class="bar" id="task${i}">
+                <label>${task}</label>
+                <button class="edit-btn" onclick="updateTodo(${i})">Edit</button>
+                <button class="delete-btn" onclick="deleteTodo(${i})">Delete</button><br>
+            </div>
+        `);
+    });
+}
+
+function addTodo() {
+    let txtValue = $("#txt").val().trim();
+    if (txtValue === "") {
+        alert("You can't add empty text");
+        return;
+    }
+    todoList.push(txtValue);
+    displayTodo();
+    $("#txt").val("");
+}
+
+function deleteTodo(index) {
+    todoList.splice(index, 1);
+    displayTodo();
+}
+
+function updateTodo(index) {
+    let txtValue = $("#txt").val().trim();
+    if (txtValue === "") {
+        alert("You can't submit empty text");
+        return;
+    }
+    todoList[index] = txtValue;
+    displayTodo();
+    $("#txt").val("");
+}
+
+$(document).ready(function () {
+    $("#my-btn").on("click", function () {
+        addTodo();
+    });
+    displayTodo();
+});
+
+
+/*
 var todoList = [ "Task-1" , "Task-2 " , "Task-3"]
 
 
@@ -14,8 +65,6 @@ for(var i = 0 ; i < todoList.length ; i++){
 }
 
 }
-
-
 
 function addTodo(){
     if(document.getElementById("txt").value.trim() === ""){
@@ -54,7 +103,7 @@ displayTodo()
 
 
 
-
+*/
 
 
 
